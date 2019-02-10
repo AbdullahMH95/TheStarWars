@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { View, StyleSheet, Image, Alert } from "react-native";
 import { Input } from "react-native-elements";
 import { CustomButton } from "../styles/buttons";
-import api from "../utils/api";
-import { auth } from "../constants/urls";
+import { connect } from "react-redux";
+import { login } from "../redux/actions/actions";
 
-export default class LoginScreen extends Component {
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
     // init state.
@@ -14,9 +14,6 @@ export default class LoginScreen extends Component {
       password: "",
       loading: false
     };
-
-    // Bind this function.
-    this.login = this.login.bind(this);
   }
 
   static navigationOptions = {
@@ -64,59 +61,33 @@ export default class LoginScreen extends Component {
         <CustomButton
           title="Login"
           iconName="arrow-right"
-          onClick={this.login}
-          loading={this.state.loading}
+          onClick={this.loginButton}
+          loading={this.props.user.loading}
           loadingProps={{ color: "black" }}
-          disabled={this.state.loading}
+          disabled={this.props.user.loading}
         />
       </View>
     );
   }
 
-  login = async () => {
-    // Get the username & password from the state.
+  // Set onPress for login button
+  loginButton = () => {
     const { username, password } = this.state;
-    const loginModel = {
-      username,
-      password
-    };
-
-    if (!this.validate(loginModel)) {
+    if (!this.validate(username, password)) {
       return;
     }
-
-    this.setState({ loading: true });
-    try {
-      const { data } = await api.get(auth + username);
-      const { count, results } = data;
-      if (count > 0) {
-        const person = results[0];
-        if (person.birth_year == password && person.name == username) {
-          console.log("-------Go To Search-------");
-          this.setState({ username: "", password: "" });
-          this.props.navigation.navigate("Search");
-        } else {
-          this.showError("Please enter valid username/password");
-        }
-      } else {
-        this.showError("Can not find user with this username");
-      }
-    } catch (error) {
-      this.showError(error);
-      console.log("Catched Error: ", error);
-    } finally {
-      this.setState({ loading: false });
-    }
+    this.props.login(username, password, this.props.navigation);
   };
 
-  validate = loginModel => {
-    if (loginModel.username == "" || loginModel.password == "") return false;
+  // return to init state
+  componentWillReceiveProps() {
+    this.setState({ username: "", password: "" });
+  }
 
+  // check for empty
+  validate = (username, password) => {
+    if (username == "" || password == "") return false;
     return true;
-  };
-
-  showError = error => {
-    Alert.alert("Error", error, [{ text: "OK" }], { cancelable: false });
   };
 }
 
@@ -143,3 +114,12 @@ const styles = StyleSheet.create({
     borderRadius: 10
   }
 });
+
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(LoginScreen);

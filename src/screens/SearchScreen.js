@@ -4,18 +4,22 @@ import { Icon, SearchBar, Avatar } from "react-native-elements";
 import api from "../utils/api";
 import { search } from "../constants/urls";
 import { FlatGrid } from "react-native-super-grid";
+import { connect } from "react-redux";
 
-export default class SearchScreen extends Component {
+class SearchScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allPlanets: [],
       sizes: [],
       planetName: "",
-      loading: false
+      loading: false,
+      timer: 15,
+      searchesCount: 0, 
     };
   }
 
+  // navigation and logout button
   static navigationOptions = ({ navigation }) => {
     return {
       title: "Planets",
@@ -44,13 +48,44 @@ export default class SearchScreen extends Component {
       )
     };
   };
-
   updateSearch = planetName => {
     this.setState({ planetName });
   };
 
+  // start timer for 15 requests in 60s
+  countdown = () => {
+    var { timer } = this.state;
+    var downloadTimer = window.setInterval(() => {
+      timer -= 1;
+      this.setState({timer})
+      if (timer <= 0) {
+        clearInterval(downloadTimer);
+        this.setState({ timer: 60, searchesCount: 0 });
+      }
+    }, 1000
+    );
+  };
+
+  // find planet from api 
   findPlanet = async () => {
-    const { planetName, allPlanets, sizes } = this.state;
+    const { planetName, allPlanets, sizes, timer, searchesCount } = this.state;
+    console.log('timer from state?:',timer);
+    this.setState({searchesCount: (searchesCount + 1) })
+
+    // start timer for normal users
+    if (timer == 60) {
+      this.countdown();
+    }
+
+    // check if it normal user or Luke Skywalker!
+    if (
+      searchesCount > 15 &&
+      this.props.user.user.name != "Luke Skywalker" &&
+      timer > 0
+      ) {        
+        return;
+      }
+      
     this.setState({ loading: true });
     try {
       const { data } = await api.get(search + planetName);
@@ -61,6 +96,7 @@ export default class SearchScreen extends Component {
         if (allPlanets.length == 0) {
           allPlanets.push(planet);
           sizes.push(max);
+          this.countdown();
         } else {
           if (!this.isExists(planet)) {
             allPlanets.push(planet);
@@ -82,6 +118,7 @@ export default class SearchScreen extends Component {
     }
   };
 
+  // prevent duplicate planets
   isExists = planet => {
     const { allPlanets } = this.state;
 
@@ -138,9 +175,9 @@ export default class SearchScreen extends Component {
     );
   }
 
+  // render one planet
   renderItem = (item, index) => {
     const { sizes } = this.state;
-
     return (
       <View style={styles.itemContainer}>
         <Avatar
@@ -155,6 +192,7 @@ export default class SearchScreen extends Component {
     );
   };
 
+  // view details in alert
   viewDetail = planet => {
     return Alert.alert(
       `${planet.name} Info`,
@@ -168,6 +206,7 @@ export default class SearchScreen extends Component {
         Surface_water: ${planet.surface_water}.`
     );
   };
+
 }
 
 // Styles
@@ -186,3 +225,12 @@ const styles = StyleSheet.create({
     padding: 20
   }
 });
+
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(SearchScreen);

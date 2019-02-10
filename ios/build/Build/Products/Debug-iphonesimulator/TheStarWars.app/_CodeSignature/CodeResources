@@ -8,9 +8,13 @@
 		<data>
 		TneGhDkoD7Q01Gl8e5EScUBsgfM=
 		</data>
+		<key>Assets.car</key>
+		<data>
+		N18K71PyzRLqDZfEZxkxLTSgLWY=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		iU7kDs+Vq3OMyM+z17ruIaMlFoY=
+		xw3xgOXhxFTBOLfMXvMT9+6XPbU=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -111,7 +115,7 @@
 		</data>
 		<key>PlugIns/TheStarWarsTests.xctest/TheStarWarsTests</key>
 		<data>
-		W0LmtiDIpAWDl5pxsoNhpojNZWg=
+		f/qzLdL7rCI1POwz64doHgtwzLk=
 		</data>
 		<key>PlugIns/TheStarWarsTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -139,15 +143,26 @@
 			eVXKFBJ7MEEsEU6xPP1wK12rJl/rGIDRaV1zyqgkzeE=
 			</data>
 		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			N18K71PyzRLqDZfEZxkxLTSgLWY=
+			</data>
+			<key>hash2</key>
+			<data>
+			YhHDj6HCU81kGhzSeD8TetRdjuLPE4jLuGmOmpRJfp8=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iU7kDs+Vq3OMyM+z17ruIaMlFoY=
+			xw3xgOXhxFTBOLfMXvMT9+6XPbU=
 			</data>
 			<key>hash2</key>
 			<data>
-			TI8gXfwSun+XnYb2oCudpfyE7tqBSLjbbXc1RHegnfM=
+			9BoN/f9OC7KPVoTyPPJ4a0i9vJ1cTISxCqMMgrm8HSk=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -387,11 +402,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W0LmtiDIpAWDl5pxsoNhpojNZWg=
+			f/qzLdL7rCI1POwz64doHgtwzLk=
 			</data>
 			<key>hash2</key>
 			<data>
-			dB7ksapiWRsKfVWjPU4NqUli6xAMDMXgx+YhazgU0JI=
+			BdHeDhDPwKBeDr/5DC/4uL161BKEJAUYkKkbCF/Ken4=
 			</data>
 		</dict>
 		<key>PlugIns/TheStarWarsTests.xctest/_CodeSignature/CodeResources</key>
