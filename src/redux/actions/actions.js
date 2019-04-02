@@ -15,7 +15,7 @@ export const login = (username, password, navigation) => {
           const person = results[0];
           if (person.birth_year == password && person.name == username) {
             console.log("-------Go To Search-------");
-            dispatch({ type: "GET_USER_SUCCCESS", payload: person });
+            dispatch({ type: "GET_USER_SUCCESS", payload: person });
             navigation.navigate("Search");
           } else {
             dispatch({ type: "GET_USER_FAILED" });

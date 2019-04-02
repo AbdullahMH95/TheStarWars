@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Demangle.cpp \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Demangle.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/FBString.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CppAttributes.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Portability.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Config.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CPortability.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Traits.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/hash/Hash.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Utility.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/ApplyTuple.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/Invoke.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Preprocessor.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/hash/SpookyHashV1.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/hash/SpookyHashV2.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Bits.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/ConstexprMath.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Assume.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Builtins.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Exception.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/memory/Malloc.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/memory/detail/MallocImpl.h \
+  /Users/ALMAHRI/ReactProjects/TestSW/TheStarWars/node_modules/react-native/third-party/folly-2018.10.22.00/folly/detail/Demangle.h
